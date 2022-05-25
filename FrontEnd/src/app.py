@@ -17,7 +17,7 @@ from callbacks import register_callbacks
 
 # choose your own theme here: https://bootswatch.com/default/
 app = dash.Dash(external_stylesheets=[dbc.themes.MINTY])
-app.title = "Inside Airbnb Gent"
+app.title = "ArchiGent"
 app.layout = html.Div(get_app_layout())
 register_callbacks(app)
 

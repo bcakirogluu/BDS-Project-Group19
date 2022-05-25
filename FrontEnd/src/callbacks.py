@@ -14,6 +14,14 @@ def register_callbacks(app):
     def update_figure(value):
         return charts.get_map(value)
 
+    @app.callback(
+    Output('click-data', 'children'),
+    Input('ex3-map', 'clickData'))
+    def display_click_data(clickData):
+        if clickData is not None:
+            return clickData['points'][0].get("hovertext")
+        return ""
+
     # @app.callback(Output('image', 'children'),
     #           [Input('interval', 'n_intervals')])
     # def display_image(n):

@@ -47,15 +47,23 @@ def get_map():
                 html.H2("Exercise 3: Map", style={"margin-top": "1em"}),
                 get_map_insights(),
                 dcc.RadioItems(
-                    options=data.room_type_options,
-                    value='all',
+                    options=[{"label": "en", "value": "en"}, {"label": "nl", "value": "nl"}],
+                    value=None,
                     id='ex3-radioitems',
                     labelStyle={'cursor': 'pointer', 'margin-left': '20px'}
                     ),
                 dcc.Graph(
                     id="ex3-map",
                     figure=charts.get_map()
-                    )
+                    ),
+                html.Div([
+                    dcc.Markdown("""
+                        **Click Data**
+
+                        Click on points in the graph.
+                    """),
+                    html.Pre(id='click-data'),
+                ], className='three columns')
                 
             ],
         )
