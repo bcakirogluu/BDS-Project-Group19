@@ -14,14 +14,12 @@ def get_map(pref_lang=None):
     fig1 = px.scatter_mapbox(df,
                              lat='latitude',
                              lon='longitude',
-                             #color='room_type',
                              hover_name='name', 
-                             hover_data={'latitude':False, 'longitude':False, 'name':True},
+                             hover_data={'latitude':False, 'longitude':False, 'name':True, 'uri': False},
                              labels={
                                  'name': 'Attraction name',
                                  },
-                             #color_discrete_sequence=px.colors.sequential.Viridis,
-                             zoom=11,
+                             zoom=13,
                              mapbox_style='open-street-map')
 
     fig1.update_layout(clickmode='event')

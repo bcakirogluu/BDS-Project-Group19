@@ -19,7 +19,7 @@ def register_callbacks(app):
     Input('ex3-map', 'clickData'))
     def display_click_data(clickData):
         if clickData is not None:
-            return clickData['points'][0].get("hovertext")
+            return clickData['points'][0].get("customdata")[3]
         return ""
 
     # @app.callback(Output('image', 'children'),
