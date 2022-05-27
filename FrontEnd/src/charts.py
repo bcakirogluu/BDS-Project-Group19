@@ -9,7 +9,7 @@ def get_map(pref_lang=None):
     # else:
     #     df = data.listings[data.listings['room_type'] == room_type]
 
-    df = data.points_df
+    df = data.getPoints(pref_lang)
 
     fig1 = px.scatter_mapbox(df,
                              lat='latitude',
