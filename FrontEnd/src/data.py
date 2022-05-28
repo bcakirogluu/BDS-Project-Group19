@@ -32,8 +32,8 @@ try:
 except Exception as e:
     print(e)
 
-neighbourhoods_path = 'C:/workspace/UGent/BigDataScience/Project/BDS-Project-Group19/FrontEnd/data/neighbourhoods.csv'
-neighbourhoods_geo_path = 'C:/workspace/UGent/BigDataScience/Project/BDS-Project-Group19/FrontEnd/data/neighbourhoods.geojson'
+neighbourhoods_path = '../data/neighbourhoods.csv'
+neighbourhoods_geo_path = '../data/neighbourhoods.geojson'
 
 neighbourhoods = pd.read_csv(neighbourhoods_path, encoding_errors='ignore')
 neighbourhoods_geo = geojson = json.loads(
