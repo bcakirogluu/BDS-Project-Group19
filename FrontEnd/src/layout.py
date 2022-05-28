@@ -6,21 +6,16 @@ import charts
 
 def get_app_description():
     description_text = '''
-        This Dashboard shows how Airbnb impacts neighbourhoods in Flemish Region, Ghent.
+        Welcome to ArchiGent
         '''
     return dcc.Markdown(children=description_text)
 
 
 def get_data_insights():
     insights = '''
-        In the first chart, the desired neighbourhood is filtered and the number of rooms available from which type is displayed. 
-        The distribution of room type over a neighbourhood can be observed by selecting a specific neighbourhood in the dropdown. 
-        In the second chart, the room prices in the neighbourhoods are displayed. 
-        The third chart presents a histogram of available days in a year, the filtering by "Room type" is provided via radio items.
-
-        As can see from these charts, the majority of the listings is "Entire home/apt".
-        The number of rooms which are available more than 200 days per year is high.
-        As a result, although the rooms are available, long-term renters such as students still suffer from finding a stay.
+        Are you attempting to find out information about historical buildings within Ghent? Look no further. 
+        Simply select one of the locations within our map of Ghent and we will provide you with information about your selected building.
+        Enjoy!
     '''
     return dcc.Markdown(children=insights)
 
@@ -47,8 +42,8 @@ def get_map():
                 html.H2("Exercise 3: Map", style={"margin-top": "1em"}),
                 get_map_insights(),
                 dcc.RadioItems(
-                    options=[{"label": "en", "value": "en"}, {"label": "nl", "value": "nl"}],
-                    value=None,
+                    options=[{"label": "English", "value": "en"}, {"label": "Nederlands", "value": "nl"}, {"label": "Francais", "value": "fr"}, {"label": "Español", "value": "es"}, {"label": "Deutsch", "value": "de"}],
+                    value="en",
                     id='ex3-radioitems',
                     labelStyle={'cursor': 'pointer', 'margin-left': '20px'}
                     ),
