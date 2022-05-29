@@ -40,8 +40,8 @@ def register_callbacks(app):
             else:
                 text = "Records related to this attraction:"
                 record_dt = dt.DataTable(id="table-container",
-                                         columns=[{'name': 'Museums', 'id': 'museum'},
-                                                  {'name': 'Records', 'id': 'title'}],
+                                         columns=[{'name': 'Museum', 'id': 'museum'},
+                                                  {'name': 'Record', 'id': 'title'}],
                                          data=records_df.to_dict("records"),
                                          editable=False,
                                          style_header={'textAlign': 'left'},
@@ -49,7 +49,7 @@ def register_callbacks(app):
                                          page_action="native",
                                          page_current= 0,
                                          page_size= 10)                                         
-            row = dbc.Row([
+            div = html.Div([
                 html.H4(children=attraction_name),
                 html.H6(children=attraction_desc),
                 image_slider,
@@ -57,5 +57,5 @@ def register_callbacks(app):
                 record_dt
                 ]
             )
-            return row
+            return div
         return ""

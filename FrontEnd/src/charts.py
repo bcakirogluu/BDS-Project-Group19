@@ -9,7 +9,7 @@ def get_map(pref_lang=None):
                              lat='latitude',
                              lon='longitude',
                              hover_name='name', 
-                             hover_data={'latitude':False, 'longitude':False, 'name':True, 'desc':False, 'uri': False, 'size': False},
+                             hover_data={'latitude':False, 'longitude':False, 'name':False, 'desc':False, 'uri': False, 'size': False},
                              labels={
                                  'name': 'Attraction name',
                                  },

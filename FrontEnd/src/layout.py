@@ -20,9 +20,7 @@ def get_data_insights():
 
 def get_source_text():
     source_text = '''
-    Data from [Stad Gent](https://stad.gent/sparql),
-    licensed under [Creative Commons Attribution 4.0 International
-    License](https://creativecommons.org/licenses/by/4.0/).
+    Data from [Stad Gent](https://stad.gent/sparql).
     '''
     return dcc.Markdown(children=source_text)
 
@@ -32,17 +30,18 @@ def get_app_layout():
     return dbc.Col([
         dbc.Row([
             get_app_description(),
-            get_data_insights()
+            get_data_insights(),
+            dcc.RadioItems(
+                    options=[{"label": "English", "value": "en"}, {"label": "Nederlands", "value": "nl"}, {"label": "Francais", "value": "fr"}, {"label": "Español", "value": "es"}, {"label": "Deutsch", "value": "de"}],
+                    value="en",
+                    id='radioitems',
+                    inputStyle={'margin-right': '5px'},
+                    labelStyle={'cursor': 'pointer', 'margin-right': '20px'},
+                    style={'margin-bottom':'5px'}
+                ),
             ]),
         dbc.Row([
             dbc.Col([
-                dcc.RadioItems(
-                        options=[{"label": "English", "value": "en"}, {"label": "Nederlands", "value": "nl"}, {"label": "Francais", "value": "fr"}, {"label": "Español", "value": "es"}, {"label": "Deutsch", "value": "de"}],
-                        value="en",
-                        id='radioitems',
-                        labelStyle={'cursor': 'pointer', 'margin-right': '20px'},
-                        # style={'margin-left':'0px'}
-                    ),
                 dcc.Graph(
                         id="map",
                         figure=charts.get_map(),

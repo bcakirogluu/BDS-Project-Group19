@@ -43,7 +43,7 @@ def getPoints(lang_of_interest):
 def getImages(attraction_uri):
     images = []
     sparql.setQuery("""
-        SELECT  ?image
+        SELECT  DISTINCT ?image
         WHERE {
             <attraction_uri> <http://schema.org/image> ?image
         }
